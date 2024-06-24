@@ -1,0 +1,11 @@
+Para retorar un contenido HTML importamos "HTMLrespones" de FastApi asi: from fastapi.responses import HTMLResponse
+y a la hora de retornarlo podemos hacerlo asi: return HTMLResponse('<h1>JPBB</h1>')
+
+
+cómo usar parámetros de ruta:
+@app.get('/movies/{id}',tags=['movies'])
+def	get_movies(id:int):
+    for item in movies:
+        if item["id"]==id:
+            return item
+    return "no existe, busque bien manito"
